@@ -130,7 +130,10 @@ final class Features {
                 int powered = 0;
                 int artificialLight = 0;
                 int minY = Math.max(mc.world.getBottomY(), mc.player.getBlockY() - 32);
-                int maxY = Math.min((mc.world.getTopY() - 1), mc.player.getBlockY() + 16);
+               int maxY = Math.min(
+    mc.world.getHeight() - 1,
+    mc.player.getBlockY() + 16
+);
                 net.minecraft.util.math.BlockPos.Mutable pos = new net.minecraft.util.math.BlockPos.Mutable();
 
                 for (int y = minY; y <= maxY; y++) {
